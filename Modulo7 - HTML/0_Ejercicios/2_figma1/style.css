@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin-left: 8px;
+    margin-top: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header{
+    margin-bottom: 34px;
+}
+    #logo{
+        width: 227px;
+        height: 46px;
+    }
+    #banner{
+        margin-top: 22px;
+        width: 650;
+        height: 375;
+    }
+
+main{
+}
+    h1{
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 36.8px;
+    }
+    main > p{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18.4px;
+    }
+
+section{
+    margin-top: 22px;
+}
+    section > h2{
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 27.6;
+    }
+    
+        

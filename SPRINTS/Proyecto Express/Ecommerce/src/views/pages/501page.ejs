@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/loguito.png">
+    <link rel="stylesheet" href="/css/errores.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/formularios.css">
+    <title>MiEcommerce</title>
+</head>
+<body>
+    <body>
+        <header>
+            <%- include('../partials/header.ejs')  %>
+        </header>
+
+        <div class="green_container"></div>
+
+        <div class="vertical_container">
+            <div class="red_container">
+                <img src="https://www.pngplay.com/wp-content/uploads/12/Sad-Emoji-No-Background.png" alt="carita triste"
+                    class="sad_face">
+                <div class="msg_container">
+                    <h1>501 Not Implemented</h1>
+                    <p>¡Ups! Lo sentimos. El servidor no reconoce el método de petición, o carece de la capacidad para cumplirla. Vamos a buscar un lugar mejor para vos.</p>
+                </div>
+                
+            </div>
+            <button class="btn_index"><a href="/" class="inicio">Inicio de MiEcommerce</a></button>
+        </div>
+        <footer class="error_footer">
+            <%- include('../partials/footer.ejs')  %>
+        </footer>
+
+    </body>
+    
+    </html>
+    
+</body>
+</html>

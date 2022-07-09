@@ -1,0 +1,3 @@
+las arrow function de una sola linea tienen un return implicito
+por ejemplo si hago ()=> notas.push(x);
+como el metodo push retorna el indice donde pushea devuelve ese return.

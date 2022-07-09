@@ -1,0 +1,193 @@
+<!--
+
+    HTML: HyperText Markup Language.
+    (lenguaje de marcado de hipertexto)
+
+    Es un lenguaje de marcado que nos permite, mediante etiquetas, generar contenido visible dentro de nuestro sitio web. 
+
+    -cada elemento en el lenguaje HTML produce un componente visual en el navegador.
+    flow del sitio:
+    -Si un elemento ocupa toda la pantalla, el siguiente colapsará y caerá al primer lugar que tenga disponible.
+    
+    Etiquetas y atributos:
+    
+    ej: <etiqueta atributo="valores">contenido</etiqueta>
+    
+    Atributos: Son configuraciones adicionales de los elementos que ajustan su comportamiento de diversas formas.
+    Valores: Nos permiten definir las configuraciones. Siempre van a estar escritos entre comillas " " y luego de un signo de igual.
+    
+    
+    Elementos de bloque: ocupan todo el ancho.
+    Elemento de linea: ocupan el espacio que correponde de su contenido interno.
+    
+    
+    listas:
+    atributos:start="10" empieza a contar desde el 10
+
+-->
+
+<!DOCTYPE html>
+
+<!-- LENGUAJE PRINCIPAL DEL DOCUMENTO -->
+<html lang="es-AR">    
+
+<!-- CABECERA -->
+<head>              
+
+    <!--ETIQUETAS META-->
+    <meta charset="UTF-8">                                                                                      <!--Idioma de teclado-->
+    <meta http-equiv="allow" content="HEAD,GET,PUT,DELETE,OPTIONS" />                                           <!--metodos HTTP soportados por el servidor web-->
+    <meta http-equiv="cache-control" content="no-cache" />                                                      <!--en que cache se guardara la pagina (public:cache publica, private:cache privada, no-cache:no se guardara en cache, no-store: se guardara en cache pero no se archivara)-->
+    <meta http-equiv="content-language" content="es-AR, en" />                                                  <!--especifica los idiomas y/ culturas utilizados en nuestra página-->
+    <link rel="stylesheet" type="text/css" href="azul.css" title="azul">                
+    <link rel="alternate stylesheet" type="text/css" href="rojo.css" title="rojo">              
+    <meta http-equiv="default-style" content="azul" />                                                          <!--elegimos cual de los dos estilos de arriba usar (en este caso el azul)-->
+    
+    <meta http-equiv="set-cookie" content="nombre=valor; path=ruta; expires=Dia, DD-MMM-YY HH:MM:SS ZONA" />    <!--guardar una cookie en el navegador del usuario-->
+    <!--Nombre y valor: nombre y valor de la cookie, por ejemplo, SESION=23
+    Path: ruta desde la cual se guardará la cookie (las subcarpetas tendrán acceso a la misma), por ejemplo, path=/
+    Expires: Fecha en la que expirará la cookie-->
+    <meta http-equiv="set-cookie" content="SESION=23; path=/; expires=Thursday, 4-Feb-16 00:15:00 GMT" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">                                      <!--el tamaño del viewport sera el tamaño del dispositivo y comenzara con un zoom de 1-->
+
+    <meta name="description" content="aqui va la descripcion" />
+    <meta name="author" content="nombre del autor" />
+    <meta name="keywords" content="palabra clave1, palabra clave2, palabraclave3" />
+
+    <!--LINKS-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">                                           <!--favicon-->
+    <link rel="stylesheet" href="my-css-file.css">                                                              <!--hoja de estilos-->
+    <script src="my-js-file.js"></script>                                                                       <!--script js-->
+    
+    
+    <!--TITULO-->
+    <title>Document</title>
+		
+
+</head>
+
+<body>
+    
+    <!--ETIQUETAS 1-->
+    <div></div>                                     <!--divide y agrupa contenido-->
+
+    <header></header>                               <!--cabecera de la pagina-->
+
+    <nav>                                           <!--barra de navegacion-->
+        <ul>                                        <!--lista desordenada (unorderer list) / lista ordenada (orderer list- ol)-->
+            <li></li>                               <!--item de la lista-->
+            <li></li>
+            <li></li>
+        </ul>
+    </nav>
+
+    <section></section>                             <!--contenido principal-->
+
+    <article></article>                             <!--articulos-->
+
+    <aside></aside>                                 <!-- Contenido relacionado pero que no es tan importante (el que pondria al costado) -->
+
+    <footer></footer>                               <!--Pie de pagina-->
+
+    <!--ETIQUETAS 2-->  
+    <h1></h1>                                       <!--titulos (solo puede haber 1 en todo el html)-->
+
+    <h2></h2>                                       <!--subtitulos-->
+    <h3></h3> <h4></h4> <h5></h5> <h6></h6>
+
+    <p></p>                                         <!--parrafo-->
+
+    <time datetime="15-7-2021"> 15-7-2021 </time>   <!--fecha-->
+
+    <hgroup></hgroup>                               <!--agrupar contenido (puedo usar h1 ahi si porque no tiene la misma gerarquia que el titulo principal)-->
+
+        
+    <address>                                       <!-- Indica que es una direccion de un sitio-->
+
+        <a href ="https//google.com"> Google </a>   <!-- Enlace -->
+    </address>
+
+    <img src="images/imagen.jpg" alt="titulo imagen"/> <!--imagen-->
+
+    <blockquote cite="https//google.com">           <!-- para hacer una cita y especifica de que sitio web lo sacaron-->        
+    </blockquote>
+    
+
+    <!--FORMULARIOS-->
+    <form action="/registro" method="POST">    <!--atributo: action - define la ruta en donde se va a procesar la informacion capturada (backend)-->
+        <!-- Aquí van los campos -->           <!--atributo: method - define como se enviara la informacion GET o POST-->
+        <label>Nombre Completo:</label>                         <!--describe lo que  esperamos que el usuario haga dentro del campo-->
+        
+        <!--text: campo que recibe caracteres, password: el contenido se vera con ***, email: solicitara que coincida el formato de correo valido, tel: se activa un teclado numerico desde el cel-->
+        <input type="text" name="nombre"  placeholder="inserte nombre" required>                                     <!--type: tipos de campo - name: nombre del campo - required: obligatorio-->
+        <!--text-area: campo de comentarios de varias lineas-->
+        <textarea></textarea>
+        <!--select: contendra multiples opciones para elegir-->
+        <select>
+            <!--generara una opcion-->
+            <option hidden>--selecciona--</option> 
+            <option value="arg">Argentina</option>                  <!--valor del campo para identificarlo-->
+            <option value="">Brasil</option>
+        </select>
+        <!--botones-->
+        <button type="submit"></button>
+        <button type="reset"></button>
+
+        <!--boton circular que podemos marcar-->
+        <input type="radio">
+        <!--para acompañar con un texto-->
+        <label>
+            <input type="radio" name="terminos" value="terminos1">
+            acepto los terminos                     <!--recordar en este caso usar value-->
+        </label>
+        <label>                                     <!--como tienen el mismo name, solo voy a poder elegir una de las 2 opciones-->
+            <input type="radio" name="terminos" value="terminos2">
+            acepto los terminos 2
+        </label>
+
+        <!--idem pero cuadrado-->
+        <input type="checkbox" value="optino">
+
+        <!--generara el campo para enviar una fecha-->
+        <input type="date" value="1985-08-28" max="" min="">      <!--value pone una fecha por defecto antes de elegir-->
+        <!--cargara un archivo-->
+        <input type="file" accept=".jpg, .png" multiple> <!--multiple permite la carga de varios archivos--><!--accept: solo permite esos formatos-->
+
+        <!--para mostrar los errores se estila usar un spam luego de cada uno de los campos-->
+        <label>
+            <input type="text">
+            <span class="feedback"></span>
+        </label>
+
+        <input type="submit" value="Enviar"> 
+        <!--por get puedo ver los datos enviados del formulario en la url-->
+
+        <textarea name="" id="" cols="10" rows="10"></textarea>
+
+        <input type="text" autocomplete="off">
+        <input type="tel" autocomplete="off">
+        <input type="text" disabled>
+
+        <!--buena practica-->
+        <div>
+            <!--algunas librerias lo que hacen es que el label meten adentro del input para animarlo-->
+            <label for="nombre">Nombre:</label> <!--display block para que quede uno abajo del otro al label--><!--for hace referencia al id del input-->
+            <input type="text" id="nombre">
+        </div>
+
+        <!--con el pseudoelemento before puedo poner un asterisco rojo para mostrar los requeridos-->
+
+        <fieldset>
+            <legend>Datos personales:</legend>
+            <label for="name"></label>
+            <input type="text" id="name">
+        </fieldset>
+
+        
+    </form>
+
+
+</body>
+
+</html>

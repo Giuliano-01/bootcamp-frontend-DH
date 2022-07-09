@@ -1,0 +1,60 @@
+//PARA EL POST//
+
+const obj = {
+	userId: "2",
+	id: "4",
+	title: "Posteo DH",
+	body: "Esto es un posteo de DH"
+}
+
+
+fetch("http...", {
+	method: "POST",
+	body: JSON.stringify(obj),
+	headers: {
+		"Content-type": "application/json
+	}
+})
+.then(data => data.json())
+.then(posteo => console.log(posteo))
+
+Hago el .then porque no se suma a su base de datos asi que 
+cargo el objeto que envie con el .then
+
+
+
+//PARA EL GET//
+
+fetch("http...", si es get aca no hace falta poner nada),
+
+(siempre fijarte en la documentacion de la api)
+
+
+
+location: ver en wikipedia
+
+	host: "es.wikipedia.org"
+	hostname: "es.wikipedia.org"
+	href: "https://es.wikipedia.org/wiki/Katie_Holmes"
+	origin: "https://es.wikipedia.org"
+	pathname: "/wiki/Katie_Holmes"
+
+	protocol: "https:"
+
+
+location search: youtube imagine dragons query en el buscdor
+
+	location.search
+	'?search_query=imagine+dragons'
+	
+	let qs = new URLSearchParams(location.search)
+	qs -> tiene las propiedades de searchParams
+		con has("search_query"): bool que devuelve si tiene o no la informacion del query
+		con get("search_query"): devuelve el dato del query 
+
+
+en session y local puedo pasar objetos stringifeados
+
+
+// API GET usuarios https://jsonplaceholder.typicode.com/users
+// API POST posts   https://jsonplaceholder.typicode.com/

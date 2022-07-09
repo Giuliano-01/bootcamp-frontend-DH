@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: blue;
+}
+
+.index-content{
+    margin: 100px 100px;
+    display: flex;
+    border: 1px solid black;
+}
+    .index-forms{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+        .index-form{
+            border: 2px solid black;
+            width: 100%;
+            padding: 20px 20px;
+            text-align: center;
+        }
+            .index-form form{
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+    .index-users{
+        border: 1px solid black;
+        width: fit-content;
+        margin: auto;
+        margin-top: 10px;
+        padding: 5px 5px;
+    }
+        .index-users ul{
+            list-style: none;
+            font-size: 15px;
+        }
+
+
+.tarjeta{
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.item{
+    border: 1px solid black;
+    width: 30%;
+}

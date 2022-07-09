@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <link rel="stylesheet" href="/css/style.css"> <!--como es publico ya puedo acceder desde public-->
+</head>
+<body>
+    
+    <h1>Estamos en el Index</h1>
+    
+    
+    <div class="index-content">
+        
+        <div class="index-forms">
+            
+            <div class="index-form">
+                <h2>Form usando metodo GET</h2>
+                <form action="/" method="GET">
+                    <label for="name">Registro nueva persona</label>
+                    <input type="text" placeholder="nombre" name="nombre"> <!--como tengo get, en la url veo el nombre name= valor del input en la url-->
+                    <input type="submit" value="Agregar">
+                </form>
+            </div>
+    
+            <div class="index-form">
+                <h2>Form usando metodo POST</h2>
+                <form action="/" method="POST">
+                    <label for="name">Registro nueva persona</label>
+                    <input type="text" placeholder="nombre" name="nombre"> <!--como tengo post, en el body del req veo el nombre name= valor del input en la url-->
+                    <input type="submit" value="Agregar">
+                </form>
+            </div>
+
+        </div>
+    
+        <div class="index-users">
+            <ul>
+                <% users.forEach(user => { %>
+                    <li>Usuario: <%= user %></li>
+                <% }) %>
+            </ul>
+        </div>
+
+    </div>
+
+    <h2>Form usando metodo GET enlazado a otra ruta</h2>
+    <form action="/perfil" method="get">
+        <input type="text" placeholder="nombre" name="nombre" />
+        <input type="number" placeholder="DNI" name="dni" />
+        <input type="number" placeholder="Nº T.Credito" name="credito" />
+        <input type="submit" value="Agregar" />
+    </form>
+
+</body>
+</html>

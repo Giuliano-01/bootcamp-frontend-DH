@@ -1,0 +1,329 @@
+/*Product view header*/
+
+
+.productViewHeaderContainer{
+    z-index: 300;
+    margin: 15px;
+    width: 100%;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    color: var(--blanco);
+
+}
+    .title{
+        color: var(--blanco);
+    }
+
+    .productViewHeaderContainer ul{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        list-style: none;
+        gap: 15px;
+        font-size: 20px;
+        
+    }
+
+/* Product view card */
+.productViewCardContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 15px 10px;
+    color: var(--blanco);
+    font-size: 15px;
+    
+}
+    .productViewCardContainer > .imgContainer{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+        .productViewCardContainer > .imgContainer > img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            
+        }
+    .productViewCardContainer > .infoContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 5px 5px;
+        
+    }
+        .productViewCardContainer > .infoContainer > div{
+            display: flex;
+            
+        }
+            .productViewCardContainer > .infoContainer > div > .infoContainerItem{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--blanco);
+                margin-right: 15px;
+                font-size: 14px;
+                
+            }
+            .productViewCardContainer > .infoContainer > div > .infoContainerItem > .p{
+                color: var(--blanco );
+                font-size: 7px;
+                margin-left: 5px;
+            }
+                .productViewCardContainer > .infoContainer > div > .infoContainerItem > .p > p{
+                    height: 11px;
+                }
+
+    .infoContainerStore{
+        width: 85px;
+        height: 32px;
+        background: var(--grisOscuro);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        cursor: pointer;
+        font-size: 17px;
+    }
+
+
+/* Product view info */
+.productViewInfoContainer{
+    margin: 15px 10px;
+    font-size: 14px;
+    color: var(--blanco);
+}
+    .productViewInfoContainer > h3{
+        margin-bottom: 5px;
+    }
+    .productViewInfoContainer > form{
+        display: flex; 
+        flex-direction: column;
+    }
+        .productViewInfoContainer > form > label{
+            font-size: 12px;
+        }
+        .productViewInfoContainer > form > input{
+            width: 100%;
+            max-width: 400px;
+            height: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--grisClaro);
+            background-color: var(--grisOscuro);
+            margin-bottom: 10px;
+            margin-top: 3px;
+            text-indent: 15px;
+            color: var(--blanco);
+        }
+        
+        .productViewInfoContainer > form > input:focus{
+            outline: none;
+        }
+        .productViewInfoContainer > form > input::placeholder{
+            color: var(--blanco);
+        }
+
+        .productViewInfoContainer > form > .agregar-quitar{
+            width: 80px;
+            height: 25px;
+
+            background-color: var(--grisOscuro);
+            border: 1px solid var(--grisClaro);
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 3px;
+            margin-bottom: 10px;
+        }
+            .agregar-quitar button{
+                background-color: transparent;
+                border: none;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                border-radius: 50px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                color: var(--blanco);
+            }
+            .agregar-quitar p:hover{
+                color: var(--grisClaro);
+            }
+            .productViewInfoContainer > form > textarea{
+            max-width: 700px;
+            resize: none;
+            background-color: var(--grisOscuro);
+            border: 1px solid var(--grisClaro);
+            border-radius: 16px;
+            margin-bottom: 10px;
+            margin-top: 3px;
+            padding: 15px 15px;
+            color: var(--blanco);
+        }
+
+
+
+        .productViewInfoContainer > form > textarea:focus{
+            outline: none;
+        }
+        .productViewInfoContainer > form > textarea::placeholder{
+            color: var(--blanco);
+        }
+        .productViewInfoContainer > form > select{
+            width: 100%;
+            max-width: 400px;
+            height: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--grisClaro);
+            background-color: var(--grisOscuro);
+            margin-bottom: 10px;
+            margin-top: 3px;
+            text-indent: 10px;
+            color: var(--blanco);
+            cursor: pointer;
+        }
+        .productViewInfoContainer > form > select:focus{
+            outline: none;
+        }
+        .inputStock{
+            width: 30px;
+            text-align: center;
+            background-color: transparent;
+            color: var(--blanco);
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none; 
+          margin: 0; 
+        }
+/* Product view images */
+.productViewImageItem{
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    background-color: var(--grisOscuro);
+    padding: 5px 5px;
+    margin: 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    .productViewImageItem > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        gap: 5px;
+    }
+    .productViewImageItem > div > p{
+        width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .productViewImageItem > div > img{
+        width: 50px;
+        height: 50px;
+    }
+    .productViewImageItem > button{
+        border: none;
+        background-color: var(--grisClaro);
+        padding: 5px 15px;
+        border-radius: 15px;
+        cursor: pointer;
+        color: var(--blanco);
+    }
+    .href{
+        display: none;
+        width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+/* Product view save cancel */
+.productViewSaveCancel{
+    margin: 15px 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+    .productViewSaveCancel > button{
+        text-decoration: none;
+        width: 100px;
+        height: 30px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        border: none;
+        background-color: var(--grisOscuro);
+        border: 1px solid var(--grisClaro);
+        cursor: pointer;
+        color: white;
+    }
+
+    .productViewSaveCancel > button:hover{
+        background: var(--Primary);
+        transition: all 300ms ease;
+    }
+@media (max-width: 375px) {
+
+    /* Product view card */
+    .productViewCardContainer{
+        font-size: 11px;
+    }
+    .infoContainerStore{
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+    .infoContainerStore p{
+        display: none;
+    }
+
+    /* Product view images */
+    .productViewImageItem > div > p{
+        display: none;
+    }
+    .href{
+        display: flex;
+        font-size: 10px;
+    }
+
+}
+@media(min-width:1025px){
+
+    /*Header*/
+    .productViewHeaderContainer{
+        width: 78%;
+    }   
+        .productViewHeaderContainer .title{
+            font-size: 23px;
+        }
+    /* Product view card */
+    .productViewCardContainer{
+        font-size: 20px;
+    }
+    .productViewCardContainer > .infoContainer > div > .infoContainerItem > .p{
+        font-size: 11px;
+    }
+
+    /* Product view info */
+    .productViewInfoContainer{
+        font-size: 20px;
+    }
+    .productViewInfoContainer > form > label{
+        font-size: 18px;
+    }
+
+}

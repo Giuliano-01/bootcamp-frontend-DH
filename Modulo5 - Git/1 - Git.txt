@@ -1,0 +1,213 @@
+
+CONFIGURACIONES:
+
+	$ git config --global user.name "Cosme Fulanito"            - Para agregar o modificar el nombre
+	$ git config --global user.email "cfunalito@dc.uba.ar"      - Para agregar o modificar el mail
+	
+	$ git config --global -l                                    - Para ver el archivo config
+
+	$ git config --global --unset-all user.email                - Para borrar la configuracion del mail por ejemplo
+
+
+CLONAR REPOSITORIO:
+
+	$ git clone https://git.exactas.uba.ar/jgodoy/mi-primer-repo.git
+
+CREAR REPOSITORIO:
+
+    $git init       - crea repo local
+
+    $rm -rf .git    - para borrarlo (borra la carpeta oculta .git del mismo path)
+
+ENLAZAR REPO LOCAL A REPO REMOTA:
+
+    (ahora para conectar este repositorio a un repositorio vacio creado en github..)
+    (a partir de ahora nos comunicamos con el repo remoto atravez de origin)
+    (cuando creemos una rama en el repo remoto la llamaremos con otro nombre)
+
+    $git remote add origin https://github.com/Giuliano-01/RepoName.git          - Agrego la direccion del repo en una "rama" llamada origin
+	$git remote remove
+
+    $git pull origin master(o rama que quiera actualizar)                       - Trae los datos actualizados del repo remoto
+
+ACTUALIZAR DATOS DE UN REPO:
+
+    $git status                             - Para ver el estado de nuestros archivos (aquellos que no estan en el stage de subida o modificados)
+
+    $git add nombreArchivo.extension        - Para subir el archivo al stage para esperar ser commiteado 
+
+    $git add .                              - Para subir todos los archivos que sufieron cambios al stage
+
+	$ git rm --cached .                     - Elimina todos los archivos del stage
+
+	$ git rm --cached <file>                - Elimina un archivo específico del stage
+
+    $git commit -m "mensaje descriptivo"    - Para subir los archivos al repo local
+
+    $git push origin master                 - Para subir los archivos al repo remoto
+
+CONFLICTOS:
+
+    (si quisieramos hacer un push y modificamos algo que ya subio otra persona da error)
+    (por lo que hacemos pull y al querer traernos algo que ya tenemos modificado nosotros tambien da error)
+
+    (pero git nos trae esa linea de otra persona junto a la linea nuestra y nos hace decidir con cual quedarnos)
+    (entonces desde VSCode elegimos o borramos la parte que no queremos)
+    (ahora si podemos hacer add - commit - push)
+
+    (si git hace un merge automatico tenemos que utilizar :q para salir)
+
+EVITAR CONFLICTOS:
+
+    (Una buena manera de evitar conflictos es mantener los commit relativamente
+    pequeños y subir al repositorio frecuentemente. De esta manera, tenemos menos
+    probabilidades de que ocurran conflictos y de que, si ocurren, sean pequeños.)
+
+    (Otra manera un poco más avanzada es el uso de ramas para trabajar en paralelo a la
+    versión principal del proyecto. Los invitamos a investigarlas por su cuenta.)
+
+HISTORIAL: 
+
+    $git log                        - muestra el historial
+
+    $git log -- <ruta del archivo>  - muestra el historial de un archivo específico
+
+    $git log --author=usuario       - muestra el historial de un usuario en particular
+
+VER CAMBIOS: 
+
+	$ git diff                              - Compara la situacion actual con el ultimo commit
+	
+	$ get diff <hash1> <hash2>              - Compara la situacion entre 2 commits
+	
+	$ get diff HEAD^ HEAD                   - Compara el anterior al puntero HEAD con el puntero HEAD
+
+    $ git log                               - Veo todos los commits
+	(q para salir)
+
+	$ git log --oneline --decorate --all --graph    -Veo todos los commits de forma resumida y con ramas decoradas
+	
+	$ git log --oneline                             - Otra forma resumida de ver
+	
+	$ git log --oneline --decorate                  - Otra forma resumida que muestra el puntero HEAD
+
+DESHACER CAMBIOS (Luego de un commit):
+
+	
+	*borra los commits*
+
+	$ git reset --hard <hash del commit al que regresar>    - Borra los commits
+	
+	$git reset --soft <hash " " ">                          - Borra los commits pero las modificaciones quedan en el stage
+	
+
+	*deshacer y crea un comit nuevo*
+
+	$git revert <hash o HEAD o "nombre_branch">             - Deshace el cambio y lo guarda en otro commit
+	
+	$ git revert --no-commit <hash o HEAD o HEAD~1>         - Deshace el cambio y lo guarda en el status (puedo quitar y hacer un commit nuevo con los 2 cambios)
+	$ git revert continue                                   - y para continuar hago
+
+
+VER RAMAS:
+
+    $git branch
+
+RAMAS:
+
+	$ git branch <nombre>                               - Crear una rama
+	
+	$ git branch -d <nombre>                            - Eliminar una rama
+	
+	$ git branch -m <nombre viejo> <nombre nuevo>       - Renombrar una rama
+	
+	$ git checkout <nombre>                             - Apuntar el HEAD a la rama que cree
+	
+	$ git checkout -b <nombre>                          - Crear una rama y apuntar el Head al branch que cree
+				"nombre con espacio"
+	
+	(Para guardar una variante del checkout, es commitear igual que siempre)
+	$ git commit
+	
+UNIR RAMAS:
+
+    	 
+	$ git merge <nombre>        - Unir ramas
+	
+	*Opcion1*
+	(SI: No toco nada en la rama "master" pero si en la rama "fix" y unimos)
+	(OBTENGO: Ahora "master" termina en el mismo lugar que la rama "fix")
+
+	*Opcion2*	
+	(SI: Hago cambios en ambas ramas pero no en el mismo archivo)
+	(OBTENGO: un nuevo commit uniendo ambas ramas)
+	
+	*OPCION3*
+	(SI: Hago cambios en ambas ramas y en el mismo archivo (misma linea del mismo archivo))
+	(OBTENGO: en el mismo archivo que mergee las dos versiones de esa linea)
+	(TENGO QUE: escribir a mano con que me quedo y commitear)
+	
+	$ git merge --abort             - Cancelar la union de las ramas
+	
+	**OTRO**
+	(Mover nuestro trabajo de <bugFix*> directamente sobre el trabajo de <main>)
+	(De ese modo, parecería que esas dos tareas se desarrollaron secuencialmente, cuando en realidad se hicieron en paralelo.)
+	
+    $git rebase<main>
+	
+    (luego puedo hacer lo mismo al reves y quedan main y bugfix en el mismo lugar)
+	
+	(rebase interactivo, aparece un UI con los commits que elegiste, podes elegir el orden o ignorar alguno)
+	git rebase -i HEAD~<num>
+
+APUNTAR EL HEAD:
+
+	$ git checkout <nombre>             - Apuntar el HEAD en alguna rama
+	
+	$ git commit uso checkout <hash>    - Apuntar el HEAD en alguna rama a travez de un hash
+	
+	$ git checkout <ej: main>^          - Apuntar el HEAD un commit atras
+	
+	$ git checkout <ej main>^2          - Apuntar el HEAD un commit atras pero a la rama2
+	
+	$ git checkout <ej: main>~<num>     - Apuntar el HEAD x commits atras
+	
+	puedo combinar esto de la siguiente forma:
+	$ git checkout main~1^2^1
+
+ TAGS:
+	
+	$ git tag                             - Mostrar los tags
+	
+	git tag -l "v0.1.*"                   - Mostrar los tags que comiezen con "v0.1."
+		
+	$ git tag V.0.2.2 (por ej)            - Agregar un tag donde apunta el HEAD
+	
+	$ git tag <hash>                      - Agregar un tag a un lugar especifico
+
+	$git tag -d <nombre>                  - Eliminar un tag
+
+	(crear un tag anotado, para agregar mas info al tag)
+	git tag -a <nombre>
+	(wq para terminar el msj)
+
+	(para ver la info del tag o de cualquier cosa)
+	git show <nombre>
+
+----------------------------------------------------------------
+// Stash, como guardar el dw en una pila para cambiar de rama, hacer otra cosa y luego seguir trabajando con ello
+----------------------------------------------------------------
+	
+	(apilar trabajo)
+	$ git stash save <"descripcion">
+	
+	(desapilar trabajo)
+	$ git stash pop
+	
+	(para ver otros cmds porque podes usar a stash no solo como una pila sino acceder a cualquier posicion)
+	$git stash -h
+
+
+
+LINK PARA PRACTICAR CON RAMAS
+https://learngitbranching.js.org/?locale=es_AR

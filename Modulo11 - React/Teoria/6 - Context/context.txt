@@ -1,0 +1,60 @@
+una carpeta context dentro de src, dentro un archivo context.js
+
+import {createContext} from "react"
+
+const userContext = createContext();
+
+(como un contenedor de informacion que esta en un nivel superior)
+(un componente mas que englobara toda la aplicacion)
+
+de user context extraemos una propiedad: 
+
+const {Provider} = userContext;
+
+
+ahora hacemos un componente de funcion
+
+		(children toma los elementos hijos de este componente, los que metamos dentro)
+const customProvider = ({children}) =>{
+
+	const [user, setUser] = useState(
+		name: '',
+		logged: ''
+	);
+	const context = {
+		user,
+		setUser
+	}
+
+	return (
+		
+		<Provider value={context}>
+			{children}
+		</Provider>
+	)
+}
+
+
+
+en el main :
+
+
+en cualquier hijo puedo usar los datos:
+
+uso el hook use context
+
+import {useContext} from 'react'
+import customProvider from '..'
+
+import {userContext} from 'context.js'
+
+const {user,setUser} = useContext(userContext); //le paso la referencia al contexto que estamos referenciando
+
+aca puedo actualizar el estado del context!!!
+
+
+
+
+***cada vez que actualizas alguna prop del context se renderizan todos los hijos!! Redux solo te actualiza los que estan suscriptos a ese estado! OJO!
+
+

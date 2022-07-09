@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+    <h1>¡Rick and Morty!</h1>
+
+    <div class="search" style="display: flex; margin: 100px 100px">
+        <form action="/characters/char/" style="margin-right: 100px;">
+            <h2>Buscar personaje por ID:</h2>
+            <div>
+                <label for="name">Nombre</label>
+                <input type="text" name="id">
+            </div>
+            <input type="submit" value="Buscar">
+        </form>
+    
+        <form action="/characters/list/">
+            <h2>Buscar personaje por nombre:</h2>
+            <div>
+                <label for="name">Nombre</label>
+                <input type="text" name="name">
+            </div>
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
+
+    <ul>
+        <% data.forEach(character => { %>
+         <li> 
+            <h3><%= character.name %></h3>
+            <img src=<%= character.image %>  alt=<%= character.name %>   >
+            <p><a href=<%= `/character/${character.id}` %>  >Ver más</a></p>
+        </li>
+        <% }) %>
+    </ul>
+
+</body>
+</html>

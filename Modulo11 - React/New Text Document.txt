@@ -1,0 +1,103 @@
+
+constructor(props){
+
+	super(props);
+	this.state = {
+		nombre: "",
+		index: 0,
+	}
+
+}
+
+apiCall(consecuencia){
+	
+	fetch("..")
+	.then(respuesta => respuesta.json())
+	.then(info => consecuencia(info))
+	.catch(error => console.log(error))
+
+}
+
+onSum = () => {
+	this.setState({...this.state, index:this.state + 1}) //para que quede la propiedad nombre y no se sobre escriba en state	
+	this.apiCall(this.funcdata);
+}
+onRes = () => {
+	this.setState({...this.state, index:this.state - 1})	
+	this.apiCall(this.funcdata);
+}
+
+componentDidMount() {
+	
+	this.apiCall().funcdata;
+
+}
+
+
+funcdata = (data)=>{
+	this.setState({nombre: data.results[this.state.index].name}) //aca cambia solo cuando se actualiza el componente por eso uso update dentro del click, primero se actualiza el nombre y despues el index, por eso se actualiza 2 veces
+}
+
+	<button onClick={()=>this.onSum()}>+</button>
+	<p>{this.state.nombre}<p>
+	<button onClick={()=>this.onRes()}>-</button>
+	
+
+
+
+
+apiCall(consecuencia){
+
+	axios.get("..")
+	.then(respuesta=> respuesta.data) //te lo trae ya parseado
+	.then(info => info...)
+	.catch...
+
+
+
+
+
+SPA
+
+npm i react-router-dom
+
+import {BrowserRouter, Routes, Navigate}
+
+<BrowserRouter>
+	<Routes>
+		<Route path='/' element={<Home />}/>		
+		<Route path='/*' element={(recibe jsx)<h1> Error 404</h1>}/> //cualquier ruta que no sea ninguna de las anteriores
+		<Route path=''/* element={(redirecciona) <Navigate to="/" replace (borra la url que puso el usuario y pone la url a la cual la dirigiste)/>}>		
+	</Routes>
+</BrowserRouter>
+
+
+
+const imagenes = {
+imagen01: require("url"),
+imagen02: require("url")
+}
+
+
+
+import {Link} from 'react-router-dom'
+
+nav
+	<Link to={'/'}> Inicio </Link>
+	<Link to={'/productos'}> Productos </Link>
+
+	<Link to={`/productos/${product.id}`}> ver mas </Link>
+nav
+
+
+import {useParams} from 'react-router-dom'
+
+const {id} = useParams(); //devuelve los parametros
+
+const product = products.find(product => product.id === Number(id));
+
+if (!product) {
+	return <h1> no encontrado<h1> //puede pasar un componente tambien
+}
+
+activeClassName='active'

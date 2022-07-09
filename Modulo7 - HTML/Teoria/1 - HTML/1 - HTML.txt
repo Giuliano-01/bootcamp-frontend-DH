@@ -1,0 +1,32 @@
+
+HTML: HyperText Markup Language.
+(lenguaje de marcado de hipertexto)
+
+Es un lenguaje de marcado que nos permite, mediante etiquetas, generar contenido visible dentro de nuestro sitio web. 
+Podemos crear desde elementos simples, como títulos, hasta elementos más complejos, como formularios. 
+*Necesitamos aprender: 
+-la sintaxis de HTML con sus etiquetas y atributos, 
+-cómo estructurar un sitio 
+-las características de los distintos elementos de HTML.
+
+CSS:
+(Hojas de estilo en cascada)
+
+CSS es la herramienta que nos permitirá darle estilo a nuestro sitio, colocando colores, tipografías, fondos, 
+posicionando elementos y permitiendo utilizar estilos distintos según la resolución de cada pantalla. 
+*Necesitamos aprender: 
+-la sintaxis de CSS con sus propiedades, clases, selectores, 
+-cómo armar una hoja de estilos de forma ordenada y bien conectada con el HTML.
+
+
+
+
+
+Usar los archivos public 
+Osea imagenes, css etc
+
+tenemos que avisarle a node que los usaremos e indicarle la direccion de la carpeta public con:
+
+const publicPath = path.resolve(__dirname, './public');
+
+app.use(express.static(publicPath));

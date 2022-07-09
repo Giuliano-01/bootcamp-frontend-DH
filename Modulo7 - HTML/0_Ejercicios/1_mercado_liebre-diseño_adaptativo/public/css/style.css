@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --Amarillo: #EAC926;
+    --Azul: #03264C;
+    --Celeste: #1259c3;
+    --GrisOscuro: #666;
+    --GrisClaro: #ebebeb;
+    --Verde: #39b54a;
+
+    --CuerpoTexto: 12px;
+    --Titulares: 24px;
+    --Precios: 18px;
+    --Descuentos: 16px;
+    --Descripciones: 16px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body{
+    background-color: var(--GrisClaro);
+}
+
+/*header*/
+header{
+    color: var(--Azul);
+    padding: 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    background-color: var(--Amarillo);
+}
+header > *{
+    width: 150px;
+    height: 50px;
+}
+    #logo > img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    #busqueda{
+        display: flex;
+        width: 250px;
+        margin-right: 30px;
+    }
+        #busqueda > input{
+            width: 100%;
+            height: 60%;
+            align-self: center;
+            border: none;
+            outline: none;
+        }
+            #busqueda > input::placeholder{
+                text-indent: 5%;
+            }
+            #busqueda > input:focus{
+                text-indent: 4%;
+            }
+    header > nav{
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        header > nav > ul{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content:space-between;
+        }
+            header > nav > ul > li{
+                cursor: pointer;
+            }
+    
+    .burger-menu{
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    i{
+        font-size: 30px;
+    }
+
+main{
+    width: 90%;
+    margin: auto;
+}
+    main > section{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 1px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: space-around;
+    }
+        main > section > h4{
+            color: var(--Azul);
+            width: 100%;
+            margin: 5px;
+            text-align: center;
+            font-size: var(--Titulares);
+        }
+        .tarjeta{
+            margin: 10px;
+            padding: 15px;
+            
+            border-top: 1px solid #ebebeb;
+
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 1px 1px 30px var(--GrisOscuro);
+            background-color: var(--Verde);
+            font-size: var(--CuerpoTexto);
+        }
+
+            .tarjeta > img{
+                border: 2px solid black;
+                width: 100px;
+                height: 100px;
+                margin-bottom: 10px;
+            }
+            .precio{
+                font-size: var(--Precios);
+            }
+            .descuento{
+                font-size: var(--Descuentos);
+            }
+            .descripcion{
+                font-size: var(--Descripciones);
+            }
+
+
+footer{
+    border: 1px solid black;
+    display: flex;
+    background-color: var(--Amarillo);
+}
+    footer > section{
+        border: 1px solid black;
+        padding: 5px;
+        margin: 5px;
+    }
+        footer > section > h4{
+            color: var(--Azul);
+            border: 1px solid black;
+            text-align: center;
+        }
+        footer > section > p{
+            text-align: justify;
+            font-size: var(--CuerpoTexto);
+        }
+
+@media screen and (max-width:361px) {   /*hasta ancho de 361px*/
+    body{
+        background-color: #39b54a;
+    }
+}
+@media screen and (min-width:361px) {  /*desde ancho de 361px*/
+    body{
+        background-color: red;
+    }
+}
+@media screen and (min-width:769px) {   /*desde ancho de 769px*/
+    body{
+        background-color: blue;
+    }
+}

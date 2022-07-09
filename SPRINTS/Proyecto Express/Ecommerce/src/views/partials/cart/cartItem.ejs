@@ -1,0 +1,23 @@
+<div class="product-list">
+    <% cartdb.cartItems.forEach( item => { %>
+    
+        <div class="cart_item">
+
+            <div class="cart_desc">
+                <img src=<%= item.src %>  alt=<%= item.alt %> value= <%= item._id %> >
+                <h4><%= item.name %> </h4>
+            </div>
+            <div class="cart_opt">
+                <a href="#" class="quitar">Quitar</a>
+                <div class="agregar-quitar">
+                    <p class="quitarprod">-</p>
+                    <span><%= item.cant %> </span>
+                    <p class="agregarprod">+</p>
+                </div>
+                <p><%= item.price * item.cant%> </p>
+            </div>
+        
+        </div>
+    
+    <% }) %>
+</div>

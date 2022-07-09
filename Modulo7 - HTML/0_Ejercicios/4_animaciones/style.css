@@ -1,0 +1,125 @@
+body,
+html {
+    overflow-x: hidden;
+}
+
+hr {
+    margin: 25px 0;
+}
+
+/* DESAFÍO 1 */
+.move .button {
+    z-index: 2;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: red;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 1s;
+}
+
+.move .button:hover{
+    position: relative;
+    left: 200px;
+}
+
+
+
+
+/* DESAFÍO 2 */
+.desafio-2 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: all 2s;
+}
+
+.desafio-2:hover{
+    width: 300px;
+}
+
+
+
+
+/* DESAFÍO 3 */
+.box-1 {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    background-color: red;
+    transition: all 1s linear;
+}
+
+.box-2 {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    background-color: blue;
+    transition: all 1s linear 1s;
+}
+
+.box-1:hover ~ .box-2{
+    width: 300px;
+}
+.box-1:hover{
+    width: 300px;
+}
+
+
+
+
+/* DESAFÍO 4 */
+.ball {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: red;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: rebota 1s linear infinite alternate;
+}
+
+
+@keyframes rebota {
+    50%{
+        transform: translateY(-10px);
+    }
+    
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+
+/* Desafío 5 */
+.bounceBall {
+    height: 75px;
+    width: 75px;
+    border-radius: 100%;
+    background-color: red;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    animation: translate 1s linear infinite alternate;
+}
+
+.navigate {
+    position: relative;
+    margin-bottom: 25vh;
+}
+
+
+
+
+@keyframes translate {
+    0%{
+        transform: translate(50px);
+    }
+    100%{
+        transform: translate(500px);
+    }
+}

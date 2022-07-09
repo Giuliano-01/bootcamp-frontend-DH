@@ -1,0 +1,15 @@
+<div class="product-list">
+    <% suggested.forEach(product => { %>
+    
+        <a class="product-card" href=<%= `/products/detail/${product._id}` %> >
+            <div class="product-card-img">
+                <img src=<%= product.src %>  alt=<%= product.alt %>>
+            </div>
+            <div class="product-desc">
+                <h3><%= product.nombre %></h3>
+                <p><%= product.puntos %> <span>puntos</span></p>
+            </div>
+        </a>
+    
+    <% }) %>
+</div>
